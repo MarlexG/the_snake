@@ -156,7 +156,7 @@ def handle_keys(game_object):
 
 
 def main():
-    # Инициализация PyGame:
+    """Запускает основной игровой цикл."""
     pygame.init()
     # Тут нужно создать экземпляры классов.
     snake = Snake()
