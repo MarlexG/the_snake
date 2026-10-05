@@ -46,14 +46,12 @@ pg.display.set_caption('Змейка')
 clock = pg.time.Clock()
 
 
-# Тут опишите все классы игры.
 class GameObject:
     """Базовый класс для игровых объектов."""
 
     def __init__(self, position=None, body_color=None):
         """Инициализирует позицию и цвет объекта."""
-        if position is None:
-            position = (SCREEN_WIDTH // 2, SCREEN_HEIGHT // 2)
+        position = position or (SCREEN_WIDTH // 2, SCREEN_HEIGHT // 2)
         self.position = position
         self.body_color = body_color
 
@@ -165,7 +163,6 @@ def handle_keys(game_object):
 def main():
     """Запускает основной игровой цикл."""
     pg.init()
-    # Тут нужно создать экземпляры классов.
     snake = Snake()
     apple = Apple()
 
