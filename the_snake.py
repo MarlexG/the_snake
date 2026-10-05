@@ -69,7 +69,6 @@ class GameObject:
 
     def _draw_cell(self, position=None, color=None):
         """Отрисовывает одну ячейку на игровом поле."""
-
         position = position or self.position
         color = color or self.body_color
         rect = pg.Rect(position, (GRID_SIZE, GRID_SIZE))
@@ -87,12 +86,7 @@ class Apple(GameObject):
     """Яблоко — цель змейки."""
 
     def __init__(self, occupied_cells=None):
-        """Создаёт яблоко в случайной свободной позиции.
-
-        occupied_cells — набор координат, в которых яблоко появляться
-        не должно (например, клетки, занятые змейкой). Если не передан,
-        яблоко может оказаться где угодно.
-        """
+        """Создаёт яблоко в случайной свободной позиции."""
         super().__init__(body_color=APPLE_COLOR)
         self.randomize_position(occupied_cells)
 
@@ -132,7 +126,7 @@ class Snake(GameObject):
         self.direction = directions[randint(0, 3)]
         self.next_direction = None
         self.last = None
-    
+
     def get_head_position(self):
         """Возвращает координаты головы змейки."""
         return self.positions[0]
